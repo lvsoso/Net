@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Make a Payment{% endblock %}
+{% block body %}
+<form action="/pay" method="POST">
+{% if complaint %}
+<span class="complaint">{{complaint}}</span>
+{% endif %}
+<label for="account">To account: <input name="account" value="{{ account }}"></label>
+<label for="dollars">Dollars: <input name="dollars" value="{{ dollars }}"></label>
+<label for="memo">Memo: <input name="memo" value="{{ memo }}"></label>
+<button type="submit">Send money</button>| <a href="/">Cancel</a>
+</form>
+{% endblock %}
